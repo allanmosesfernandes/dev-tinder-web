@@ -3,6 +3,7 @@ import Footer from "./Footer"
 import { useDispatch } from "react-redux"
 import { removeUser } from "../utils/userSlice";
 import { Link } from "react-router";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
 
@@ -11,7 +12,12 @@ const Navbar = () => {
     const logoutUser = () => {
         dispatch(removeUser());
     }
+    const navigate = useNavigate();
 
+    const handleLogout = () => {
+        logoutUser(); // clear cookie / redux state / whatever
+        navigate("/login", { replace: true });
+    };
     return (
         <div className="flex flex-col min-h-screen">
             <div className="navbar bg-base-300 border-base-300">
@@ -38,7 +44,7 @@ const Navbar = () => {
                         </li>
                         <li><a>Settings</a></li>
                         <li>
-                            <Link to='/login' onClick={logoutUser}>Logout</Link>
+                            <Link onClick={handleLogout}>Logout</Link>
                         </li>
                     </ul>
                     </div>

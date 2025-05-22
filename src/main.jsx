@@ -8,11 +8,14 @@ import Login from './components/Login.jsx';
 import store from './utils/appStore.js';
 import { Provider } from 'react-redux';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
+import SessionLoader from './components/AuthProvider.jsx';
+import AuthProvider from './components/AuthProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  <>
     <Provider store={store}>
       <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route element={<Navbar />}>
@@ -21,7 +24,8 @@ createRoot(document.getElementById('root')).render(
             </Route>
           </Route>
         </Routes>
+      </AuthProvider>
       </BrowserRouter>
     </Provider>
-  </StrictMode>,
+  </>,
 )

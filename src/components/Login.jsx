@@ -20,7 +20,6 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         setLoginError('')
-        console.log('submit function was triggered')
         axios.post('http://localhost:3000/login', {
             emailId: data.email,
             password: data.password
