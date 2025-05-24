@@ -42,7 +42,7 @@ import { useState } from "react";
         console.log(updates);
         try {
         await axios.patch(
-            "http://localhost:3000/profile/edit",
+            "http://13.53.143.156:3000/profile/edit",
             updates,
             { withCredentials: true }
         );

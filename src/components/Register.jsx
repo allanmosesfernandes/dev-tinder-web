@@ -20,7 +20,7 @@ const Register = () => {
         setLoginError('');
         const { emailId, password, firstName, lastName } = data;
 
-        axios.post('http://localhost:3000/signup', {
+        axios.post('http://13.53.143.156:3000/signup', {
             emailId,
             password,
             firstName,
