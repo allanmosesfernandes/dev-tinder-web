@@ -20,7 +20,7 @@ const Login = () => {
 
     const onSubmit = async (data) => {
         setLoginError('')
-        axios.post('http://13.53.143.156:3000/login', {
+        axios.post('http://13.53.143.156/api/login', {
             emailId: data.email,
             password: data.password
         }, {withCredentials: true})
