@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            nodejs: 22
+        commands:
+            - npm ci # install exactly what's in package-lock.json
+    build:
+        commands:
+            - npm run build # invoke Vite’s build, outputs to dist/
+
+artifacts:
+    # tell CodeBuild which files to hand off to the next stage (Deploy)
+    files:
+        - '**/*'
+    # and that they live under dist/
+    base-directory: dist
+43
