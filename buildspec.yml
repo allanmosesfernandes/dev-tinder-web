@@ -3,17 +3,24 @@ version: 0.2
 phases:
     install:
         runtime-versions:
-            nodejs: 22
+            nodejs: 18
         commands:
-            - npm ci # install exactly what's in package-lock.json
+            - echo Installing dependencies...
+            - npm install
+
     build:
         commands:
-            - npm run build # invoke Vite’s build, outputs to dist/
+            - echo Building the React/Vite application...
+            - npm run build
+
+    post_build:
+        commands:
+            - echo Build completed on `date`
+            - echo Preparing for deployment...
 
 artifacts:
-    # tell CodeBuild which files to hand off to the next stage (Deploy)
     files:
-        - '**/*'
-    # and that they live under dist/
-    base-directory: dist
-43
+        - 'dist/**/*'
+        - 'appspec.yml'
+        - 'scripts/**/*'
+    base-directory: '.'
