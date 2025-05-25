@@ -50,7 +50,7 @@ const Login = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="justify-center mx-auto h-min self-center">
                 <div className="card card-border border-neutral bg-base-100 w-96 ">
                     <div className="card-body">
-                        <h2 className="card-title mx-auto">Jhatuuu</h2>
+                        <h2 className="card-title mx-auto">Jhatuuu Sala</h2>
                         <label className="input validator">
                             <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <g strokeLinejoin="round" strokeLinecap="round" strokeWidth="2.5" fill="none" stroke="currentColor">
