@@ -1,1 +1,1 @@
-echo "Deployed successfully"
+echo "Deployed successfulluyy"
