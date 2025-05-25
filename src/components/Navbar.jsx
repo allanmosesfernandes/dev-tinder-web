@@ -22,7 +22,7 @@ const Navbar = () => {
         <div className="flex flex-col min-h-screen">
             <div className="navbar bg-base-300 border-base-300">
                 <div className="flex-1">
-                    <a className="btn btn-ghost text-xl">Tinder</a>
+                    <a className="btn btn-ghost text-xl">Tinders</a>
                 </div>
                 <div className="flex gap-2">
                     <div className="dropdown dropdown-end">
